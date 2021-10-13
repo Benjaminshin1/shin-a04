@@ -1,0 +1,11 @@
+@startuml
+class solution43{
++main()
++createWebsite()
++createJSFolder()
++createCSSFolder()
++createHTML()
+}
+
+
+@enduml
