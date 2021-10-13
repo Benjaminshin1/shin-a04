@@ -57,13 +57,12 @@ public class solution41 {
             System.out.println(i);
 
         }
-        //filewriter to create and write to ouput file
+        //file writer to create and write to ouput file
         FileWriter output = new FileWriter("data/exercise41_output.txt");
         for(String i: names)
         {
             output.write(i+"\n");
         }
-        // closing the output FileWriter to avoid memory leakage
         output.close();
 
     }
