@@ -10,6 +10,8 @@ and sorts the list alphabetically:
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -32,7 +34,7 @@ public class solution41 {
     }
 
 
-    public static void main (String[]args){
+    public static void main (String[]args) throws IOException {
         solution41 app =new solution41();
 
         Scanner inputFile = null;
@@ -55,7 +57,14 @@ public class solution41 {
             System.out.println(i);
 
         }
-        inputFile.close();
+        //filewriter to create and write to ouput file
+        FileWriter output = new FileWriter("data/exercise41_output.txt");
+        for(String i: names)
+        {
+            output.write(i+"\n");
+        }
+        // closing the output FileWriter to avoid memory leakage
+        output.close();
 
     }
 }
