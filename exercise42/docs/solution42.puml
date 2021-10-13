@@ -1,0 +1,8 @@
+@startuml
+Class solution42{
++parseinput(Scanner inputFile)
+   main()
+}
+
+
+@enduml
