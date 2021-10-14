@@ -2,61 +2,104 @@
  *  UCF COP3330 Fall 2021 Assignment 4 Solutions
  *  Copyright 2021 Benjamin Shin
  */
-/*
-Create a program that generates a website skeleton with the following specifications:
-Generate an index.html file that contains the name of the site inside the <title> tag and the author in a <meta> tag.
-example output
-
-
-Site name: awesomeco
-Author: Max Power
-Do you want a folder for JavaScript? y
-Do you want a folder for CSS? y
-Created ./website/awesomeco
-Created ./website/awesomeco/index.html
-Created ./website/awesomeco/js/
-Created ./website/awesomeco/css/
- */
 package baseline;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class solution43 {
-    String siteName;
-    String author;
-    String path;
-    public void createWebsite(){
+    public String siteName;
+    public String author;
+    public String path;
+
+    public String createWebsite(){
         //create path
         //create website and directory
+        String directory = path + siteName;
+        File newFolder = new File(directory);
+        newFolder.mkdirs();
+        return directory;
     }
 
-    public void createJSFolder(){
+    public String createJS(){
         //create path
         //create js folder if yes and directory
+        String directory = path + siteName + "/js";
+        File newFolder = new File(directory);
+        newFolder.mkdirs();
+        return directory;
     }
 
-    public void createCSSFolder(){
+    public String createCSS(){
         //create path
         //create css file and put in proper directory
+        String directory = path + siteName + "/css";
+        File newFolder = new File(directory);
+        newFolder.mkdirs();
+        return directory;
     }
 
-    public void createHTML(){
-        //create path
+    public String createHTML() {
+        //create path and file
         //
+        String directory = path + siteName + "/index.html";
+        String htmlContent = "<title> " + siteName + " </title>\n<meta> " + author + " </meta>";
+        File file = new File(directory);
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            writer.write(htmlContent);
+            writer.close();
+            return directory;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
-    public static void main(String[] args) {
-        String siteName = null;
-        String author = null;
+        public static void main(String[] args) {
+        solution43 generate_website = new solution43();
+        String siteName;
+        String author;
         String CSS;
         String JS;
-        solution43 generate_website = new solution43();
-        generate_website.siteName = siteName;
-        generate_website.author = author;
-        generate_website.path = "src";
-
+        Scanner input = new Scanner(System.in);
 
         //Prompt for the name of the site.
+        System.out.print("Site name: ");
         //Prompt for the author of the site.
+        siteName = input.nextLine();
+        System.out.print("Author: ");
+        author = input.nextLine();
+
         //Ask if the user wants a folder for JavaScript files.
+        //prompt for simple Y or N
+        System.out.print("Do you want a folder for JavaScript? ");
+        JS = input.nextLine();
+
         //Ask if the user wants a folder for CSS files.
+        //prompt for simple Y or N
+        System.out.print("Do you want a folder for CSS? ");
+        CSS = input.nextLine();
+
+        generate_website.siteName = siteName;
+        generate_website.author = author;
+        generate_website.path = "data/website/";
+
+        System.out.println("Created " + generate_website.createWebsite());
+        System.out.println("Created " + generate_website.createHTML());
+
+        //If yes for cs or jss
+        //will only create files if 'y'
+        if(JS.equals("y")) {
+            System.out.println("Created " + generate_website.createJS());
+        }
+
+        if(CSS.equals("y")) {
+            System.out.println("Created " + generate_website.createCSS());
+        }
+
     }
 }
