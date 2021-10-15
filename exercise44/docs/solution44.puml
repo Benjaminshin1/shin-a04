@@ -1,0 +1,9 @@
+@startuml
+
+class solution44(){
++search_product()
++main()
+
+}
+
+@enduml
