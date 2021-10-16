@@ -11,24 +11,69 @@ state that no product was found and start over.
 
 package baseline;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import java.io.*;
+import java.util.Iterator;
 
 public class solution44 {
 
-    //pass through name to search for a product
-    public String search_product(String name){
-        JsonParser input = new JsonParser();
-        boolean search=true;
-        //get info from json file and compare to the input name
+    public boolean searchproduct(){
+        boolean status = false;
+        JsonParser parser = new JsonParser();
+        try {
+            //Read json file using parser and store it in obj
+            Object obj = parser.parse(new FileReader("data/exercise44_input.json"));
 
+            //Create object
+            JsonObject jsonObject = (JsonObject)obj;
+            //Reading products array from  the file
+            JsonArray totalproducts = (JsonArray)jsonObject.get("products");
 
-        if(search==false){
-            //output "Sorry, that product was not found in our inventory" if the product is not in the database
+            //take in user input
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+            String input;
+            //user input is saved to input
+            input = bufferedReader.readLine();
+
+            //name is same to avoid confusion to convert to iterator
+            Iterator iterator = totalproducts.iterator();
+            //Loop through
+            while (iterator.hasNext()) {
+                JsonObject json = (JsonObject) iterator.next();
+
+                //get rid of quotations
+                String name = json.get("name").toString();
+                name=name.replaceAll("^\"+|\"+$", "");
+
+                //Compare
+                if(input.contains(name)){
+                    System.out.println("Name: "+name);
+                    System.out.println("Price: "+json.get("price"));
+                    System.out.println("Quantity: "+json.get("quantity"));
+                    status = true;
+                }
+            }
+            //If false, then value is not found
+            if(!status){
+                System.out.println("Sorry, that product was not found in our inventory");
+                status = false;
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
         }
-        return null;
+
+        return status;
     }
 
     public static void main(String[] args) {
+        boolean status = false;
         solution44 app = new solution44();
+        System.out.println("What is the product name? ");
+        while(!status) {
+            status=app.searchproduct();
+        }
     }
 }
