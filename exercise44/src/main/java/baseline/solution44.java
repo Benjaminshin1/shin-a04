@@ -12,6 +12,7 @@ state that no product was found and start over.
 package baseline;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.io.*;
@@ -21,10 +22,9 @@ public class solution44 {
 
     public boolean searchproduct(){
         boolean status = false;
-        JsonParser parser = new JsonParser();
         try {
             //Read json file using parser and store it in obj
-            Object obj = parser.parse(new FileReader("data/exercise44_input.json"));
+            Object obj = JsonParser.parseReader(new FileReader("data/exercise44_input.json"));
 
             //Create object
             JsonObject jsonObject = (JsonObject)obj;
@@ -39,7 +39,7 @@ public class solution44 {
             input = bufferedReader.readLine();
 
             //name is same to avoid confusion to convert to iterator
-            Iterator iterator = totalproducts.iterator();
+            Iterator<JsonElement> iterator = totalproducts.iterator();
             //Loop through
             while (iterator.hasNext()) {
                 JsonObject json = (JsonObject) iterator.next();
@@ -59,7 +59,6 @@ public class solution44 {
             //If false, then value is not found
             if(!status){
                 System.out.println("Sorry, that product was not found in our inventory");
-                status = false;
             }
         } catch(Exception e) {
             e.printStackTrace();
@@ -72,6 +71,7 @@ public class solution44 {
         boolean status = false;
         solution44 app = new solution44();
         System.out.println("What is the product name? ");
+        //loop though here since a loop inside the function wont work more than 3 times
         while(!status) {
             status=app.searchproduct();
         }
