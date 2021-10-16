@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class solution46(){
++filereader()
++counter()
++main()
+}
+
+@enduml

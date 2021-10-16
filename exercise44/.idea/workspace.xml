@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09de376b-6c00-4375-b71f-131604c2f5c7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../excercise41/.idea/sonarlint/issuestore/3/9/3974f34eecc37a861885186b45b77b5246979a6e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../excercise41/.idea/sonarlint/issuestore/4/6/461236117aedebdbea132252fa0e191534c83ee8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../excercise41/.idea/sonarlint/issuestore/b/f/bf39d438fdb40dd1b0ae2d9ad46269eff936b90f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../excercise41/.idea/sonarlint/issuestore/d/7/d738cba6117cd44e672f9cbfff2c93dfc6d41052" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../excercise41/.idea/sonarlint/issuestore/d/b/dbaae175e6f58419d0250e0ec96340f0bb3f192b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../excercise41/.idea/sonarlint/issuestore/f/0/f07866736216be0ee2aba49e392191aeae700a35" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise45/data/exercise45_input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../exercise45/src/test/java/baseline/solution45Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../excercise41/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise41/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../excercise41/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../excercise41/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercise45/src/main/java/baseline/solution45.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise45/src/main/java/baseline/solution45.java" afterDir="false" />
-    </list>
+    <list default="true" id="09de376b-6c00-4375-b71f-131604c2f5c7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
