@@ -1,0 +1,8 @@
+@startuml
+class solution45{
++rewrite
++read_file
++write_file
+}
+
+@enduml
